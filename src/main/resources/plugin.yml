@@ -1,0 +1,21 @@
+name: PluginHider
+version: ${project.version}
+main: com.metox.pluginhider.PluginHider
+api-version: 1.13
+author: chizzar-dev
+website: https://discord.gg/forges
+description: Plugin listesini ve komut sizintisini gizler.
+
+commands:
+  pluginhider:
+    description: PluginHider ayarlarini yeniden yukle
+    usage: /pluginhider reload
+    aliases: [phider]
+
+permissions:
+  pluginhider.bypass:
+    description: Gizlenen komutlari gorebilir ve kullanabilir
+    default: op
+  pluginhider.admin:
+    description: PluginHider ayarlarini yonetebilir
+    default: op

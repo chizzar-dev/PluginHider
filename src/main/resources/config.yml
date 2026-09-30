@@ -1,0 +1,43 @@
+# PluginHider - chizzar-dev
+# https://github.com/chizzar-dev/PluginHider
+#
+# Sunucunda hangi pluginlerin kurulu oldugunu gizler.
+# 'pluginhider.bypass' yetkisi olanlar (varsayilan: OP) her seyi gorur.
+#
+# Uc katman calisir:
+#   1. Komut calistirma  - her surumde
+#   2. Komut agaci       - komut istemcinin listesinde hic gorunmez (1.13+)
+#   3. Tab tamamlama     - onerilerden suzulur (1.13+)
+#
+# NOT: 1.13 oncesi surumlerde sunucu yazilimi komut agaci gondermez,
+# bu yuzden orada yalnizca 1. katman calisir - komut engellenir.
+
+# Gizlenecek komutlar (basindaki / olmadan)
+blocked-commands:
+  - "plugins"
+  - "pl"
+  - "version"
+  - "ver"
+  - "about"
+  - "icanhasbukkit"
+  - "?"
+
+# true  = /bukkit:pl, /minecraft:me gibi ad-alanli tum komutlar gizlenir.
+#         Bu onemli: /bukkit:pl yazarak engeli asmayi onler.
+# false = yalnizca yukaridaki liste gizlenir
+block-namespaced: true
+
+# block-namespaced acikken bile serbest kalacak ad alanlari.
+# Ornegin kendi pluginlerinin ad alanini buraya ekleyebilirsin.
+allowed-namespaces: []
+
+# Engellenen denemeler konsola yazilsin mi
+log-attempts: false
+
+messages:
+  # Oyuncu engellenen bir komutu calistirinca gorecegi mesaj.
+  # Sunucunun normal "bilinmeyen komut" mesajiyla ayni tutmak
+  # pluginin varligini tamamen gizler.
+  blocked: "&cBilinmeyen komut. Komut listesi icin /help yazin."
+  no-permission: "&cBunun icin yetkin yok."
+  reloaded: "&aPluginHider yeniden yuklendi. &7(%count% komut gizleniyor)"
